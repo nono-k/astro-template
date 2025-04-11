@@ -1,22 +1,23 @@
+---
+// Googlee Fontsなどはここで読み込む
+
+import '@/styles/styles.scss';
+
+import Footer from '@/components/base/Footer.astro';
+import Header from '@/components/base/Header.astro';
+import Meta from '@/components/base/Meta.astro';
+
+const props = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<Meta {...props} />
 	</head>
 	<body>
+    <Header />
 		<slot />
+    <Footer />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
